@@ -1,0 +1,29 @@
+services:
+  hermes:
+    build: .
+    image: hermes-agent:latest
+    container_name: hermes-agent
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /root/.hermes:/root/.hermes
+      - /root/workspace:/root/workspace
+      - /root/.ssh:/root/.ssh:ro
+    environment:
+      - TZ=UTC
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  backup:
+    image: hermes-agent:latest
+    container_name: hermes-backup
+    profiles:
+      - manual
+    volumes:
+      - /root/.hermes:/root/.hermes
+      - /root/workspace:/root/workspace
+      - /root/.ssh:/root/.ssh:ro
+    entrypoint: ["/bin/bash", "/root/.hermes/scripts/hermes-backup.sh"]
