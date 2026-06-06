@@ -1,11 +1,9 @@
 # Windows override для Docker Desktop
-# Использование: docker compose -f docker-compose.yml -f docker-compose.windows.yml up -d
 services:
   hermes:
     network_mode: "bridge"
     ports:
       - "8642:8642"
     volumes:
-      # Windows пути
       - D:/PROJECTS/HERMESSS/.hermes:/root/.hermes
       - C:/Users/siber/hermes-sync:/root/workspace
