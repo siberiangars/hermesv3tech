@@ -2,8 +2,10 @@ model:
   default: deepseek/deepseek-v4-flash
   provider: openrouter
   base_url: https://openrouter.ai/api/v1
+  api_key: ''
 providers: {}
-fallback_providers: []
+fallback_providers:
+- openrouter
 credential_pool_strategies: {}
 toolsets:
 - hermes-cli
@@ -66,7 +68,7 @@ agent:
       \ is gonna be LEGENDARY! ARE YOU READY?! LET'S DO THIS! \U0001F4AA\U0001F624\
       \U0001F680"
 terminal:
-  backend: local
+  backend: docker
   modal_mode: auto
   cwd: /root/workspace
   timeout: 180
@@ -137,7 +139,7 @@ tool_loop_guardrails:
     idempotent_no_progress: 5
 compression:
   enabled: true
-  threshold: 0.5
+  threshold: 0.8
   target_ratio: 0.2
   protect_last_n: 20
   hygiene_hard_message_limit: 400
@@ -307,12 +309,19 @@ dashboard:
 privacy:
   redact_pii: true
 tts:
-  provider: edge
+  provider: elevenlabs
   edge:
     voice: en-US-AriaNeural
   elevenlabs:
-    voice_id: pNInz6obpgDQGcFmaJgB
+    voice_id: nPczCjzI2devNBz1zQrb
     model_id: eleven_multilingual_v2
+    stability: 0.22
+    similarity_boost: 0.78
+    style: 0.6
+    use_speaker_boost: true
+    output_format: ogg_opus
+    sample_rate: 16000
+    bit_rate: 32000
   openai:
     model: gpt-4o-mini-tts
     voice: alloy
@@ -331,6 +340,7 @@ tts:
     device: cpu
   piper:
     voice: en_US-lessac-medium
+  format: ogg_opus
 stt:
   enabled: true
   provider: local
@@ -364,7 +374,7 @@ memory:
   user_profile_enabled: true
   memory_char_limit: 2200
   user_char_limit: 1375
-  provider: ''
+  provider: holographic
   nudge_interval: 10
   flush_min_turns: 6
 delegation:
@@ -529,7 +539,8 @@ sessions:
   min_interval_hours: 24
   write_json_snapshots: false
 onboarding:
-  seen: {}
+  seen:
+    busy_input_prompt: true
 updates:
   pre_update_backup: false
   backup_keep: 5
@@ -587,3 +598,15 @@ platform_toolsets:
   - hermes-google_chat
 plugins:
   enabled: []
+mcp_servers:
+  composio:
+    command: npx
+    args:
+    - -y
+    - mcp-remote
+    - https://backend.composio.dev/v3/mcp/6f76daef-330b-48e3-bf90-1d50a0f67059
+    env:
+      COMPOSIO_API_KEY: ak_FTvn-Yc1PoeTCR4A6gjp
+    connect_timeout: 120
+    timeout: 120
+    enabled: true
