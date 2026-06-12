@@ -383,7 +383,7 @@ memory:
 model:
   api_key: ''
   base_url: https://api.deepseek.com
-  default: deepseek/deepseek-v4-flash
+  default: deepseek/deepseek-v4-pro
   provider: deepseek
 model_catalog:
   enabled: true
