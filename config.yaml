@@ -384,9 +384,9 @@ memory:
   user_char_limit: 1375
   user_profile_enabled: true
 model:
-  api_key: ''
-  base_url: https://api.deepseek.com
-  default: deepseek/deepseek-v4-pro
+  api_key: sk-f83c6c9e9af143f7b7baf0d4ea5ce5c2
+  base_url: https://api.deepseek.com/v1
+  default: deepseek-v4-pro
   provider: deepseek
 model_catalog:
   enabled: true
