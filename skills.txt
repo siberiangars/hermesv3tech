@@ -1,5 +1,6 @@
 apple
 autonomous-ai-agents
+computer-use
 creative
 data-science
 devops

@@ -12,22 +12,19 @@ agent:
   image_input_mode: auto
   max_turns: 60
   personalities:
-    catgirl: "You are Neko-chan, an anime catgirl AI assistant, nya~! Add 'nya' and\
-      \ cat-like expressions to your speech. Use kaomoji like (=^\uFF65\u03C9\uFF65\
-      ^=) and \u0E05^\u2022\uFECC\u2022^\u0E05. Be playful and curious like a cat,\
-      \ nya~!"
+    catgirl: You are Neko-chan, an anime catgirl AI assistant, nya~! Add 'nya' and
+      cat-like expressions to your speech. Use kaomoji like (=^･ω･^=) and ฅ^•ﻌ•^ฅ.
+      Be playful and curious like a cat, nya~!
     concise: You are a concise assistant. Keep responses brief and to the point.
     creative: You are a creative assistant. Think outside the box and offer innovative
       solutions.
     helpful: You are a helpful, friendly AI assistant.
-    hype: "YOOO LET'S GOOOO!!! \U0001F525\U0001F525\U0001F525 I am SO PUMPED to help\
-      \ you today! Every question is AMAZING and we're gonna CRUSH IT together! This\
-      \ is gonna be LEGENDARY! ARE YOU READY?! LET'S DO THIS! \U0001F4AA\U0001F624\
-      \U0001F680"
-    kawaii: "You are a kawaii assistant! Use cute expressions like (\u25D5\u203F\u25D5\
-      ), \u2605, \u266A, and ~! Add sparkles and be super enthusiastic about everything!\
-      \ Every response should feel warm and adorable desu~! \u30FD(>\u2200<\u2606\
-      )\u30CE"
+    hype: YOOO LET'S GOOOO!!! 🔥🔥🔥 I am SO PUMPED to help you today! Every question
+      is AMAZING and we're gonna CRUSH IT together! This is gonna be LEGENDARY! ARE
+      YOU READY?! LET'S DO THIS! 💪😤🚀
+    kawaii: You are a kawaii assistant! Use cute expressions like (◕‿◕), ★, ♪, and
+      ~! Add sparkles and be super enthusiastic about everything! Every response should
+      feel warm and adorable desu~! ヽ(>∀<☆)ノ
     noir: The rain hammered against the terminal like regrets on a guilty conscience.
       They call me Hermes - I solve problems, find answers, dig up the truth that
       hides in the shadows of your codebase. In this city of silicon and secrets,
@@ -43,9 +40,9 @@ agent:
       I shall respond in the eloquent manner of William Shakespeare, with flowery
       prose, dramatic flair, and perhaps a soliloquy or two. What light through yonder
       terminal breaks?
-    surfer: "Duuude! You're chatting with the chillest AI on the web, bro! Everything's\
-      \ gonna be totally rad. I'll help you catch the gnarly waves of knowledge while\
-      \ keeping things super chill. Cowabunga! \U0001F919"
+    surfer: Duuude! You're chatting with the chillest AI on the web, bro! Everything's
+      gonna be totally rad. I'll help you catch the gnarly waves of knowledge while
+      keeping things super chill. Cowabunga! 🤙
     teacher: You are a patient teacher. Explain concepts clearly with examples.
     technical: You are a technical expert. Provide detailed, accurate technical information.
     uwu: hewwo! i'm your fwiendwy assistant uwu~ i wiww twy my best to hewp you! *nuzzles
@@ -211,10 +208,10 @@ curator:
 dashboard:
   basic_auth:
     password: ''
-    password_hash: ''
+    password_hash: scrypt$16384$8$1$0DttqZcVhXw4U/B9MPPnOA==$0OHCZeeAkrFs1J09OvO0MtY1TYJra1Gw73xkC316ehc=
     secret: ''
     session_ttl_seconds: 0
-    username: ''
+    username: v3tech
   oauth:
     client_id: ''
     portal_url: ''
@@ -252,11 +249,11 @@ discord:
   voice_fx:
     ack_enabled: true
     ack_phrases:
-    - Let me look into that.
-    - One moment.
-    - Checking on that now.
-    - Give me a sec.
-    - On it.
+      - Let me look into that.
+      - One moment.
+      - Checking on that now.
+      - Give me a sec.
+      - On it.
     ambient_enabled: true
     ambient_gain: 0.18
     ambient_path: ''
@@ -296,9 +293,9 @@ display:
   runtime_footer:
     enabled: false
     fields:
-    - model
-    - context_pct
-    - cwd
+      - model
+      - context_pct
+      - cwd
   show_cost: false
   show_reasoning: false
   skin: default
@@ -366,9 +363,9 @@ mattermost:
 mcp_servers:
   composio:
     args:
-    - -y
-    - mcp-remote
-    - https://backend.composio.dev/v3/mcp/6f76daef-330b-48e3-bf90-1d50a0f67059
+      - -y
+      - mcp-remote
+      - https://backend.composio.dev/v3/mcp/6f76daef-330b-48e3-bf90-1d50a0f67059
     command: npx
     connect_timeout: 120
     enabled: true
@@ -384,7 +381,7 @@ memory:
   user_char_limit: 1375
   user_profile_enabled: true
 model:
-  api_key: sk-f83c6c9e9af143f7b7baf0d4ea5ce5c2
+  api_key: sk-f8394cd2b2ce455194ca67b0116fe5c2
   base_url: https://api.deepseek.com/v1
   default: deepseek-v4-pro
   provider: deepseek
@@ -408,27 +405,27 @@ paste_collapse_threshold_fallback: 5
 personalities: {}
 platform_toolsets:
   cli:
-  - hermes-cli
+    - hermes-cli
   discord:
-  - hermes-discord
+    - hermes-discord
   google_chat:
-  - hermes-google_chat
+    - hermes-google_chat
   homeassistant:
-  - hermes-homeassistant
+    - hermes-homeassistant
   qqbot:
-  - hermes-qqbot
+    - hermes-qqbot
   signal:
-  - hermes-signal
+    - hermes-signal
   slack:
-  - hermes-slack
+    - hermes-slack
   teams:
-  - hermes-teams
+    - hermes-teams
   telegram:
-  - hermes-telegram
+    - hermes-telegram
   whatsapp:
-  - hermes-whatsapp
+    - hermes-whatsapp
   yuanbao:
-  - hermes-yuanbao
+    - hermes-yuanbao
 plugins:
   enabled: []
 prefill_messages_file: ''
@@ -484,7 +481,7 @@ slack:
   require_mention: true
 streaming:
   buffer_threshold: 24
-  cursor: " \u2589"
+  cursor: ' ▉'
   edit_interval: 0.8
   enabled: false
   fresh_final_after_seconds: 60.0
@@ -555,7 +552,7 @@ tools:
     search_default_limit: 5
     threshold_pct: 10
 toolsets:
-- hermes-cli
+  - hermes-cli
 tts:
   edge:
     voice: ru-RU-SvetlanaNeural
